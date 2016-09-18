@@ -31,7 +31,7 @@ Because this is entirely new technology, and because we are just toying with thi
 
 #SHOW, DON'T TELL
 
-Fine, I've been busy hacking for the last couple hours non-stop (this project isn't yet older than 48hr). But, check some of these features in the screenshots below...
+Fine, I've been busy hacking for the last couple hours non-stop (this project isn't yet older than 24hr). But, check some of these features in the screenshots below...
 
 ![Getting Started](/SHOWCASE/starting.png?raw=true "Starting... Panda wants to dance")
 ![The Music](/SHOWCASE/visualizations.png?raw=true "Listen to audio with in-built visuals")
