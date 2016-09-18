@@ -12,7 +12,16 @@
     <WebView  xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/webviewMusic"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        />
+        android:layout_height="fill_parent" />
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:max="100" />
 
 </RelativeLayout>

@@ -4,6 +4,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -13,6 +14,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,16 +23,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private MusicAlbum musicAlbum;
-
-    private static class FRAGMENT_ARGUMENTS {
-        public static final String MUSIC_ALBUM = "MUSIC_ALBUM";
-    }
 
     class MusicAlbum {
         public String AlbumName = getString(R.string.album_name);
@@ -55,32 +54,32 @@ public class MainActivity extends AppCompatActivity {
         private Runnable pauseCallback;
         private ArrayList<Runnable> startCallback = new ArrayList<>();
 
-        public int getCurrentTrackNumber(){
-            return currentTrackNumber;
-        }
-
-        public void playNextTrack(){
-            playTrack((currentTrackNumber+1) == albumLength? 0 : currentTrackNumber+1);
+        public void playNextTrack() {
+            playTrack((currentTrackNumber + 1) >= albumLength ? 0 : currentTrackNumber + 1);
         }
 
         public void playTrack(int trackNumber) {
-            if(trackNumber > musicAlbum.albumLength)
+            if (trackNumber >= musicAlbum.albumLength)
                 currentTrackNumber = 0;
             else
                 currentTrackNumber = trackNumber;
 
             try {
-                if((mediaPlayer != null)) {
-                    if (mediaPlayer.isPlaying()){
-                        mediaPlayer.stop();
-                        mediaPlayer.reset();
-                        mediaPlayer.release();
+                if ((mediaPlayer != null)) {
+                    try {
+                        if (mediaPlayer.isPlaying()) {
+                            mediaPlayer.stop();
+                            mediaPlayer.reset();
+                            mediaPlayer.release();
+                            mediaPlayer = new MediaPlayer();
+                        }
+                    }catch (IllegalStateException e){
                         mediaPlayer = new MediaPlayer();
                     }
-                }else
-                mediaPlayer = new MediaPlayer();
+                } else
+                    mediaPlayer = new MediaPlayer();
 
-                AssetFileDescriptor descriptor = getAssets().openFd(musicAlbum.SongsFiles[musicAlbum.currentTrackNumber]);
+                AssetFileDescriptor descriptor = getAssets().openFd(SongsFiles[currentTrackNumber]);
                 mediaPlayer.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
                 descriptor.close();
 
@@ -88,7 +87,10 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onCompletion(MediaPlayer mp) {
-                        musicAlbum.playNextTrack();
+                        mp.stop();
+                        mp.reset();
+                        mp.release();
+                        playNextTrack();
                     }
 
                 });
@@ -97,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 mediaPlayer.prepare();
                 //mediaPlayer.setVolume(1f, 1f);
                 //mediaPlayer.setLooping(true);
-                for(Runnable runnable: startCallback){
+                for (Runnable runnable : startCallback) {
                     runnable.run();
                 }
                 playCallback.run();
@@ -107,44 +109,46 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        public void pausePlaying(){
-            if(mediaPlayer == null)
+        public void pausePlaying() {
+            if (mediaPlayer == null)
                 return;
 
             mediaPlayer.pause();
-            currentPlayPosition=mediaPlayer.getCurrentPosition();
+            currentPlayPosition = mediaPlayer.getCurrentPosition();
             pauseCallback.run();
         }
 
-        public void play(){
+        public void play() {
 
-            if((mediaPlayer == null)) {
+            if ((mediaPlayer == null)) {
 
                 mediaPlayer = new MediaPlayer();
 
                 try {
-                    AssetFileDescriptor descriptor = getAssets().openFd(musicAlbum.SongsFiles[musicAlbum.currentTrackNumber]);
+                    AssetFileDescriptor descriptor = getAssets().openFd(SongsFiles[currentTrackNumber]);
                     mediaPlayer.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
                     descriptor.close();
-
                     mediaPlayer.prepare();
-                }catch (Exception e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                     return;
                 }
-            }else
+            } else
                 mediaPlayer.seekTo(currentPlayPosition);
 
 
-for(Runnable runnable: startCallback){
-    runnable.run();
-}
+            for (Runnable runnable : startCallback) {
+                runnable.run();
+            }
 
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
                 @Override
                 public void onCompletion(MediaPlayer mp) {
-                    musicAlbum.playNextTrack();
+                    mp.stop();
+                    mp.reset();
+                    mp.release();
+                    playNextTrack();
                 }
 
             });
@@ -174,7 +178,7 @@ for(Runnable runnable: startCallback){
         }
 
         public boolean isPlaying() {
-            if(mediaPlayer == null)
+            if (mediaPlayer == null)
                 return false;
 
             return mediaPlayer.isPlaying();
@@ -195,6 +199,10 @@ for(Runnable runnable: startCallback){
         public void onStart(Runnable runnable) {
             startCallback.add(runnable);
         }
+
+        public int getDurationOfCurrentSong() {
+            return mediaPlayer != null ? mediaPlayer.getDuration() : 0;
+        }
     }
 
     /**
@@ -206,7 +214,6 @@ for(Runnable runnable: startCallback){
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
 
 
     /**
@@ -228,7 +235,7 @@ for(Runnable runnable: startCallback){
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),musicAlbum);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), musicAlbum, this);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -259,13 +266,13 @@ for(Runnable runnable: startCallback){
             @Override
             public void onClick(View view) {
 
-                if(musicAlbum.isPlaying()) {
+                if (musicAlbum.isPlaying()) {
                     musicAlbum.pausePlaying();
                     Snackbar.make(view, String.format("Paused: %s", musicAlbum.getNameOfCurrentSong()), Snackbar.LENGTH_LONG)
                             .show();
                     fabPausePlay.setImageResource(R.drawable.play_button);
 
-                }else {
+                } else {
                     musicAlbum.play();
                     Snackbar.make(view, String.format("Now Playing: %s", musicAlbum.getNameOfCurrentSong()), Snackbar.LENGTH_LONG)
                             .show();
@@ -283,7 +290,6 @@ for(Runnable runnable: startCallback){
     }
 
     // MediaPlayer m; /*assume, somewhere in the global scope...*/
-
 
 
     @Override
@@ -312,34 +318,115 @@ for(Runnable runnable: startCallback){
 
         MusicAlbum musicAlbum;
 
-        public AlbumFragment(MusicAlbum album){
+        public AlbumFragment(MusicAlbum album) {
             super();
             musicAlbum = album;
         }
-        public AlbumFragment(){
+
+        public AlbumFragment() {
         }
     }
 
 
     public static class MusicFragment extends AlbumFragment {
+        private static final String TAG = "MusicFragment";
+        private MainActivity mainActivity;
 
-        public MusicFragment(MusicAlbum album) {
+        public MusicFragment(MusicAlbum album, MainActivity mainActivity) {
             super(album);
+            this.mainActivity = mainActivity;
         }
-        public  MusicFragment(){
+
+        public MusicFragment() {
         }
+
+        Handler handler = new Handler();
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+        public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             final View rootView = inflater.inflate(R.layout.fragment_music, container, false);
             final WebView animationWebView = (WebView) rootView.findViewById(R.id.webviewMusic);
             animationWebView.getSettings().setJavaScriptEnabled(true);
 
+            final SeekBar seekBar = (SeekBar) rootView.findViewById(R.id.seekBar);
+            seekBar.setProgress(0);
+            seekBar.setMax(100);
+            final boolean[] update = {true};
+
+            final Runnable mUpdateTimeTask = new Runnable()
+            {
+                public void run()
+                {
+                    if(musicAlbum.mediaPlayer == null)
+                        return;
+
+                    if(!update[0]) {
+                        handler.postDelayed(this, 100);
+                        return;
+                    }
+
+                    try {
+
+                        long currentDuration = musicAlbum.mediaPlayer.getCurrentPosition();
+                        //long elapsedDuration = musicAlbum.mediaPlayer.getDuration() - currentDuration;
+                        int progress = (int) Math.ceil(currentDuration* 100.0 / musicAlbum.mediaPlayer.getDuration());
+                        //Log.d(TAG,String.format("TOTAL: %s| CurrentDur: %s | Elapsed: %s | Progress: %s | Percent: %s", musicAlbum.mediaPlayer.getDuration(), currentDuration, elapsedDuration, progress, currentDuration* 1.0 / musicAlbum.mediaPlayer.getDuration()));
+                        seekBar.setProgress(progress);
+                    }catch (Exception e){
+
+                    }
+
+                    // Running this thread after 100
+                    // milliseconds
+                    handler.postDelayed(this, 100);
+                }
+            };
+
+            seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                    if(fromUser) {
+                        double percent = progress * 1.0 / seekBar.getMax();
+                        int seekDuration = (int) Math.ceil(musicAlbum.mediaPlayer.getDuration() * percent);
+                        //Log.d(TAG, String.format("User Progress: %s| Seek Computed: %s", percent, seekDuration));
+                        musicAlbum.mediaPlayer.seekTo(seekDuration);
+                        seekBar.setProgress((int) Math.floor(percent * 100));
+                        update[0] = true;
+                    }
+
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+                    update[0] = false;
+
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+                    //int totalDuration = musicAlbum.mediaPlayer.getDuration();
+                    //int currentPosition = progressToTimer(seekBar.getProgress(), totalDuration);
+                    double percent = seekBar.getProgress() * 1.0 / seekBar.getMax() ;
+                    int seekDuration = (int) Math.ceil(musicAlbum.mediaPlayer.getDuration() * percent);
+                    Log.d(TAG, String.format("User Progress: %s| Seek Computed: %s", percent, seekDuration));
+
+                    // forward or backward to certain seconds
+                    musicAlbum.mediaPlayer.seekTo(seekDuration);
+                    seekBar.setProgress((int) Math.floor(percent*100));
+                    update[0] = true;
+
+                }
+            });
+
+
+
             musicAlbum.onPlay(new Runnable() {
                 @Override
                 public void run() {
-                    animationWebView.loadUrl(String.format("file:///android_asset/%s",musicAlbum.getCurrentVisualization()));
+                    handler.postDelayed(mUpdateTimeTask, 100);
+                    animationWebView.loadUrl(String.format("file:///android_asset/%s", musicAlbum.getCurrentVisualization()));
                 }
             });
 
@@ -368,7 +455,8 @@ for(Runnable runnable: startCallback){
         public LyricsFragment(MusicAlbum album) {
             super(album);
         }
-        public  LyricsFragment(){
+
+        public LyricsFragment() {
         }
 
         @Override
@@ -393,7 +481,8 @@ for(Runnable runnable: startCallback){
         public MusicInfoFragment(MusicAlbum album) {
             super(album);
         }
-        public  MusicInfoFragment(){
+
+        public MusicInfoFragment() {
         }
 
         @Override
@@ -418,7 +507,8 @@ for(Runnable runnable: startCallback){
         public MusicGalleryFragment(MusicAlbum album) {
             super(album);
         }
-        public  MusicGalleryFragment(){
+
+        public MusicGalleryFragment() {
         }
 
         @Override
@@ -445,11 +535,11 @@ for(Runnable runnable: startCallback){
 
         Fragment[] fragments;
 
-        public SectionsPagerAdapter(FragmentManager fm, MusicAlbum album) {
+        public SectionsPagerAdapter(FragmentManager fm, MusicAlbum album, MainActivity mainActivity) {
             super(fm);
 
             fragments = new Fragment[]{
-                    new MusicFragment(album),
+                    new MusicFragment(album, mainActivity),
                     new LyricsFragment(album),
                     new MusicInfoFragment(album),
                     new MusicGalleryFragment(album)
