@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:qwerjk="https://schemas.android.com/apk/res/com.nuchwezi.kizina"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity$MusicFragment"
+    android:background="@drawable/tiled_bg_lyrics">
+
+
+    <ScrollView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="130dp">
+
+        <com.nuchwezi.kizina.MagicTextView
+            android:textSize="18dp"
+            android:textColor="#ef11b4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            qwerjk:foreground="@drawable/fake_luxury_tiled"
+            qwerjk:innerShadowDy="2dp"
+            qwerjk:innerShadowColor="#f7efef"
+            qwerjk:innerShadowRadius="1dp"
+            qwerjk:outerShadowDy="3dp"
+            qwerjk:outerShadowColor="#06fce7"
+            qwerjk:outerShadowRadius="10dp"
+            qwerjk:strokeColor="#cf6310"
+            qwerjk:strokeJoinStyle="miter"
+            qwerjk:strokeWidth="5dp"
+            android:id="@+id/lyrics"/>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="album_name">Esoteric (WIP)</string>
+    <string name="album_artiste"></string>
+    <integer name="album_year">2016</integer>
+
+    <array name="files">
+        <item>music/beautiful_minds.mp3</item>
+        <item>music/fateful_nite.mp3</item>
+    </array>
+
+    <array name="songs">
+        <item>Beautiful Minds</item>
+        <item>One Fateful Nite</item>
+    </array>
+
+    <array name="visualizations">
+        <item>html/fireworks/index.html</item>
+        <item>html/dance/index.html</item>
+    </array>
+
+    <array name="song_info">
+        <item>Beautiful Mind is a song I was inspired to write, one of those days, when, while taking a nature walk in the forests of Entebbe, Uganda, meditating on nature; the birds, the monkeys, the lake, flowers,... it hit me just how majestic this universe is!
+            \n\nI pondered the mystery of my existence, that of things about me, and in that moment, got engulfed in a moment of awe and happiness. I realized how, before my very senses, was this overwhelming evidence that the Grand Architect of this thing I consider to be reality,
+        no matter how elusive, or illusory it might be, was nevertheless a Beautiful Mind. It would become one of many such near-mystic experiences that I would start to experience while pondering nature and ordinary life, and it\'s these sort of epiphanies that gave birth to this song.
+        \n\n
+        My name is Nemesis Fixx, and though I have avoided music for a long while, focusing on my engineering career, this year, 2016, I visited my friend and epic music producer in Entebbe, Famous (at Waterfront Beach), and together, we embarked on doing something worthwhile with my innate musical talent. On an a beautiful Sunday, we sat down, and composed the melodies and rhythms for this song.
+            \n\nThe amazing singer in this song is a beautiful lady with an equally beautiful voice, called Charlotte (a former singer in the Watoto Church).
+
+            \n\n*********\n\n
+            I dedicate this song to my wife, Eve, and my one daughter, Shona Nyx. Thanks for keeping me inspired always.
+        \n\n*********\n\n
+        This song is part of the bigger, amazing album, "ESOTERIC", by Nemesis Fixx, which was supposed to be released this year, 2016, but which has somewhat been delayed, due to my travels and other constraints. But, like this song, there are others which have been released already (most are still WIP), accessible via Genius.com, SoundCloud.com or YouTube.com, all, under the name "Nemesis Fixx".
+        \n\n*********\n\n
+        THIS TECHNOLOGY: KIZINA (Version 1)
+            \n\n
+            This method of publishing music ia an innovation and experiment - some of the features might not work on some devices and versions of Android. Send all feedback and complaints to tech@nuchwezi.com.
+            \n\nThe technology is being called "KIZINA", which is Runyoro for "Song".
+            \n\nIt is one of the experiments being done by the Nu Chwezi (https://nuchwezi.com), in Uganda, East Africa. It is the first of its kind - a music album that can play itself (the album is the music player!)
+            And is the brainchild of Joe Willrich Lutalo, CTO and Chief Researcher at NuChwezi.
+            \n\nIf you like this technology, or wish to explore how to use it for your own music and audio or multimedia projects - entertainment, educational, political, business, etc (yes, we are doing this as serious business as well), or if you want to find out more about the Nu Chwezi. and how we are transforming Africa and the world, visit the website, or contact us at:
+            info@nuchwezi.com, or come visit our labs in Entebbe, Uganda.
+            \n\n\n\n
+            NuChwezi : dream ~ create
+            \nhttps://nuchwezi.com\n
+            Copyright 2014-2016.
+        \n\n**********</item>
+        <item>
+            There was a time when I worked in Kampala, and so would commute from Entebbe to the city often. But, on one of those busy evenings, with the traffic jam nearly killing us, as we waited in queues near Queen\'s way,
+            I saw these bunch of kids that were so adept at snatching phones of folks seated in their cars, texting away without care. I recalled having nearly lost my phone that way too, and this is when the idea to write this song started.
+            I wrote most of it while in transit, that night.
+            \n\nKampala is not really as violent as I describe in the song, but some neighborhoods might get that close - remember operation Wembley?
+            \n\nAnyways, this song is dedicated to all of the folks who must deal with the ever increasing numbers of street kids and unemployed youths in our urban areas. Hopefully, by depicting these things in music, perhaps we\'ll encourage
+            those with the power, to think about the problems of the youth, and make better policies - especially concerning urban youth.
+            \n\nOh, and this song also celebrates those ladies of the night... an often stigmatized group. Thanks for keeping our cities vibrant... But ensure to stay safe ;-)
+
+            \n\n*********\n\n
+            This song is part of the bigger, amazing album, "ESOTERIC", by Nemesis Fixx, which was supposed to be released this year, 2016, but which has somewhat been delayed, due to my travels and other constraints. But, like this song, there are others which have been released already (most are still WIP), accessible via Genius.com, SoundCloud.com or YouTube.com, all, under the name "Nemesis Fixx".
+            \n\n*********\n\n
+            THIS TECHNOLOGY: KIZINA (Version 1)
+            \n\n
+            This method of publishing music ia an innovation and experiment - some of the features might not work on some devices and versions of Android. Send all feedback and complaints to tech@nuchwezi.com.
+            \n\nThe technology is being called "KIZINA", which is Runyoro for "Song".
+            \n\nIt is one of the experiments being done by the Nu Chwezi (https://nuchwezi.com), in Uganda, East Africa. It is the first of its kind - a music album that can play itself (the album is the music player!)
+            And is the brainchild of Joe Willrich Lutalo, CTO and Chief Researcher at NuChwezi.
+            \n\nIf you like this technology, or wish to explore how to use it for your own music and audio or multimedia projects - entertainment, educational, political, business, etc (yes, we are doing this as serious business as well), or if you want to find out more about the Nu Chwezi. and how we are transforming Africa and the world, visit the website, or contact us at:
+            info@nuchwezi.com, or come visit our labs in Entebbe, Uganda.
+            \n\n\n\n
+            NuChwezi : dream ~ create
+            \nhttps://nuchwezi.com\n
+            Copyright 2014-2016.
+            \n\n**********
+        </item>
+    </array>
+
+
+    <string-array name="lyrics">
+        <item>
+            SONG: BEAUTIFUL MIND - Nemesis Fixx (2016)
+            \n\n
+[Intro]
+\n\n
+Yeah\n
+Some days are really awesome,\n
+Others just feel lonesome\n
+And there\'s beautiful days,\n
+Like the way I feel today,\n
+It really feels incredible\n
+Ma spirit is all lost in bliss-\n
+It\'s really amazing!\n
+Yeah…
+\n\n
+[Hook X 2]
+\n\n
+Everywhere all about is a beautiful world\n
+The universe must have come from a beautiful mind.\n
+Everywhere all about is a beautiful world\n
+Humanity must have come from a beautiful mind.
+\n\n
+\n\n
+[Verse 1]
+\n\n
+I see the sun rise at dawn, I feel so blessed\n
+Look at the clouds glow red,  I wanna touch the sky\n
+Every time I look above and I see the clouds\n
+I love the shapes, and the way that the geometries change
+\n\n
+I love the blue of the sky, the ceiling so high\n
+Sometimes it gets gray, at night fades to black\n
+I wonder if other planets look the same\n
+Or if they have different skies with different hues
+\n\n
+I see the birds flying high, it\'s mystifying\n
+Some birds are just gliding,  others are flapping\n
+Some birds are very small,  but they look so great\n
+Others make great music, while playing above
+\n\n
+Love the wind and the breeze playing on ma skin\n
+The air flowing all about, I can\'t live without\n
+Bringing life to my body, yes I have no doubt\n
+Take deep breathe every time I feel depressed
+\n\n
+[Hook X 2]
+\n\n
+Everywhere all about is a beautiful world\n
+The universe must have come from a beautiful mind.\n
+Everywhere all about is a beautiful world\n
+Humanity must have come from a beautiful mind.
+            \n\n
+            \n\n
+[Verse Two]
+\n\n
+I love the sand on the beach, hangin there is ma wish\n
+Walking about carefree, just feeling ish-ish\n
+Admiring the lake,  thinking about the fish\n
+Swimming about in bliss, while flipping their fins
+\n\n
+I see the trees, the flowers, the shrubs and herbs\n
+In many shades of green all over the Earth\n
+Some are shaped like palms, others are like bulbs\n
+Others are just amorphous and have no curves
+\n\n
+I love the ones with the flowers, decorating the world\n
+Make it look like paradise,  ma visual lullabies\n
+Some even got fruits, or the edible roots\n
+Giving me vitamins,  energies and juice
+\n\n
+Then I look at the caves,  the rocks and cliffs\n
+Endless Savannahs or them rolling hills\n
+Or them desert dunes for ma spiritual dreams\n
+The geography of the world is packed with thrills
+\n\n
+            \n\n
+[Hook X 2]
+\n\n
+Everywhere all about is a beautiful world\n
+The universe must have come from a beautiful mind.\n
+Everywhere all about is a beautiful world\n
+Humanity must have come from a beautiful mind.
+\n\n
+            \n\n
+[Verse Three]
+\n\n
+I love to see the kids play, laughing all the way\n
+Innocent sweet kids growing everyday\n
+Learning everything we do,  everything we say\n
+Even if it\'s not okay,  they will do again
+\n\n
+Humans are really awesome in every way\n
+I really think we are special, and essential\n
+Having infinite potential, though we terrestrial\n
+And we\'ve not yet become all we could be
+\n\n
+W\'ve got philosophers,  doctors and orators\n
+Astronauts, Alchemists and mathematicians\n
+We got chefs, architects, incredible writers\n
+Innovators,  educators and regulators
+\n\n
+Creators of music,  the arts and crafts\n
+Everyone has the means to be creative\n
+Not just vegetative but procreative\n
+Human creativity is really a blessing.
+\n\n
+            \n\n
+            [Hook X 2]
+\n\n
+Everywhere all about is a beautiful world\n
+The universe must have come from a beautiful mind.\n
+Everywhere all about is a beautiful world\n
+Humanity must have come from a beautiful mind.
+\n\n
+[Outro]
+\n\n
+You should really take a break\n
+Suspend all the work,\n
+And run out into the world;\n
+Behold the majesty\n
+Of the manifested thought\n
+From that Infinite Mind\n
+From that Beautiful Mind
+\n\n
+Don\'t you ever forget,\n
+You are a part of the Infinite - that Beautiful Mind.
+        </item>
+        <item>
+            SONG: ONE FATEFUL NITE - Nemesis Fixx (2016)
+            \n\n
+            [INTRO]\n
+\n
+Yeah yeah\n
+Arch Nemesis\n
+Walkin around the streets of KLA\n
+Bringing you mad stories\n
+(Mad stories)\n
+Yeah,  aah\n
+Yeah\n
+\n
+\n
+[VERSE 1]\n
+\n
+            \n
+It was a Friday night, and Kampala was bright\n
+I was walking down a road to get a taxi\n
+There\'s was jam everywhere, I decided to walk\n
+Had a backpack on ma back I held so tight\n
+\n
+            \n
+As possessions in Kampala can easily take flight\n
+Kino kibuga kya babuffu, gwe buza Babaluku\n
+There\'s a thug that\'s snatching, another who\'s watching\n
+If yo new to the streets, yo the bird of prey\n
+\n\n
+Better keep the phone away like tooth decay\n
+O some thugged-out kids might hit yo way\n
+And so how I lost mine? there was no delay\n
+Swallowing I-M pills like vitamin K\n
+\n\n
+Messaging overload as I hit the road\n
+A young boy came along, in the area code\n
+I could not see the face till he walked up close\n
+He was wearing a hood and feigning the manhood\n
+\n\n
+Looked up at me, and then started pointing at me\n
+There were three others like him standing around\n
+Each of them wearing a cross like vicars of Christ\n
+They were so fast,  soon they had vanished from sight\n
+\n\n
+Left me without a phone, and the wallet was gone\n
+By the time I had to fight, I was standing alone\n
+Four kids had just stolen ma cellular phone\n
+And all the money had gone, including a loan\n
+\n\n
+I could not get a taxi, I had to walk home\n
+Was approaching midnight when I hit the town\n
+Truth be told, I was freezing n\' feeling dizzy\n
+Wanted to sit down and catch some warm breeze\n
+\n\n
+There were others like me, just hangin\' around\n
+Them ladies of the night, were bitchin around\n
+Pickin\' the rounds, as men were drinkin around\n
+I looked around, and then I went digging around\n
+\n\n
+
+[HOOK X 2]\n
+\n\n
+On a fateful night, a hateful night\n
+I was walking around not thinking right\n
+In Kampala at night, I caught a blight\n
+Then thugs taught me how to see the true light\n
+\n
+On a fateful night, a hateful night\n
+I was walking around not thinking right\n
+In Kampala at night, I caught a blight\n
+Then thugs taught me how to see the true light\n
+\n\n
+
+[VERSE 2]\n
+\n
+As I walked about this place, I saw this face\n
+A very dark girl wearing a yellowish dress\n
+Standing near the entrance of a lodging place\n
+A seductress with the glamour of an actress\n
+\n\n
+I could not resist what she was trying to express\n
+So I walked up to her, really wanting her\n
+All ma senses really damn hypnotized\n
+Such a creature of the night I’d never witnessed\n
+\n
+She assured me we could only talk inside\n
+She was my guide to where it is that she implied\n
+I replied, "The money\'s where I reside\n
+Should I come in, or should I just step aside?"\n
+\n
+She looked at me, and then she said that I lied\n
+I told her I\'d lost money and all the pride\n
+I was freezing from walking late into the night\n
+I would pay her twice if she\'d take me back at home\n
+\n
+She told me she had a friend, she could recommend\n
+She\'d made enough money, so she could lend\n
+But she\'d have to move with us all to the end\n
+So I had no choice but to let her call the friend\n
+\n
+And so we drove from the place in a taxi\n
+We were seated in the back, all three of us\n
+She told me she was Ray and her friend was Jane\n
+And I told em, ma real name was Nemesis\n
+\n
+We was kissing n\' hugging, touchin n\' rubbin\n
+Getting so hot for 2 O\'clock\n
+Psychedelics, Ray had brought with her\n
+And so we didn\'t even know where we was goin\'\n
+\n
+The car just kept going, and us glowing\n
+Until we lost the pace, with a sudden brake\n
+There was screaming and shooting all over the place\n
+Before we knew they were thieves, Ray had lost her face\n
+\n
+
+[HOOK X 2]\n
+
+On a fateful night, a hateful night\n
+I was walking around not thinking right\n
+In Kampala at night, I caught a blight\n
+Then thugs taught me how to see the true light\n
+\n
+On a fateful night, a hateful night\n
+I was walking around not thinking right\n
+In Kampala at night, I caught a blight\n
+Then thugs taught me how to see the true light\n
+\n
+[OUTRO]\n
+\n
+Yeah yeah\n
+You need to be careful\n
+As you walk around Kampala at night;\n
+Them thugs be waitin\' out for you\n
+Lookin out for you\n
+They tryna snatch you\n
+        </item>
+    </string-array>
+</resources>
