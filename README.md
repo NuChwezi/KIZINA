@@ -7,7 +7,7 @@ This is the world's first ever self-executable, fully interactive music album! T
 
 I'm a hacker and researcher, but also a serious Hip Hop emcee (yes, still underground, but...). So, this year, I'be been working on my debut music album, Esoteric, and was wondering, "How do I best distribute this music, given I have no promoter, no manager, no record label and few fans at the moment?" 
 
-I have already tried [SoundCloud](https://soundcloud.com/nemesis-fixx), I have created a [website](https://nemesisfixx.com), I have uploaded lyrics to [Genius](https://genius.com/artists/Nemesis-fixx), and have even had some traction talking to the good nerds at HN. But, as a tinkerer, I still wasn't satisfied. This album is by essence a big challenge to the status quo, and so, I was thinking a night before, "Why not disrupt music distribution/publishing as well?" And yes, an idea occurred to me... Why not make self-contained, self-executing music albums? 
+I have already tried [SoundCloud](https://soundcloud.com/nemesis-fixx/sets/esoteric-underground-hip-hop), I have created a [website](https://nemesisfixx.com), I have uploaded lyrics to [Genius](https://genius.com/artists/Nemesis-fixx), and have even had some traction talking to the good nerds at HN. But, as a tinkerer, I still wasn't satisfied. This album is by essence a big challenge to the status quo, and so, I was thinking a night before, "Why not disrupt music distribution/publishing as well?" And yes, an idea occurred to me... Why not make self-contained, self-executing music albums? 
 
 #THE IDEA : KIZINA 
 
@@ -29,7 +29,18 @@ Because this is entirely new technology, and because we are just toying with thi
 - They can likewise read some background/historial notes about the song, by the artiste themselves.
 - They can browse an included image gallery -- think, album or song art (more than a single file per song is possible!)
 
-Check some of these features in the screenshots below...
+#SHOW, DON'T TELL
+
+Fine, I've been busy hacking for the last couple hours non-stop (this project isn't yet older than 24hr). But, check some of these features in the screenshots below...
+
+![Getting Started](/SHOWCASE/starting.png?raw=true "Starting... Panda wants to dance")
+![The Music](/SHOWCASE/visualizations.png?raw=true "Listen to audio with in-built visuals")
+![Lyrics](/SHOWCASE/lyrics.png?raw=true "Read the lyrics as you listen")
+![Album Info](/SHOWCASE/info.png?raw=true "Check some album info/history")
+![Album/Song Gallery](/SHOWCASE/galleries.png?raw=true "View images for each song")
+
+#[DOWNLOAD THe ESOTERIC ALBUM RIGHT NOW!!!](https://github.com/NuChwezi/KIZINA/raw/master/BINARIES/Nemesis_Fixx-Esoteric_The-Album_Version1.apk "Android APK")
+#[http://tiny.cc/esoteric-album](http://tiny.cc/esoteric-album)
 
 # IN FUTURE VERSIONS
 
