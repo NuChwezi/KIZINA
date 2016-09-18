@@ -84,6 +84,16 @@ public class MainActivity extends AppCompatActivity {
                 mediaPlayer.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
                 descriptor.close();
 
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        musicAlbum.playNextTrack();
+                    }
+
+                });
+
+
                 mediaPlayer.prepare();
                 //mediaPlayer.setVolume(1f, 1f);
                 //mediaPlayer.setLooping(true);
@@ -129,6 +139,15 @@ public class MainActivity extends AppCompatActivity {
 for(Runnable runnable: startCallback){
     runnable.run();
 }
+
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    musicAlbum.playNextTrack();
+                }
+
+            });
             mediaPlayer.start();
             playCallback.run();
         }
